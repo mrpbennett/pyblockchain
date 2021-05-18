@@ -88,8 +88,29 @@ Determine if a given blockchain is valid
 This is our Consensus Algorithm, it resolves conflicts by replacing our chain with the longest one in the network.
 - `:return: <bool>` True if our chain was replaced, False if not
 
-
 ### TODO: 
 
 - [ ] Store transactions in a db 
+
+I want to be putting the following in to the db from `http://localhost:5000/chain`
+
+- `index` AS block #
+- `timestamp` AS time
+- `transactions.recipient` AS miner
+
+```json
+{
+            "index": 2,
+            "previous_hash": "f66f2671abbaff0966c99927ea2a4f41474871f7b093b0fe35ffac08fba3285a",
+            "proof": 35293,
+            "timestamp": 1621352461.6053782,
+            "transactions": [
+                {
+                    "amount": 1,
+                    "recipient": "0a3b0854b1124b4b93756fdc325d912f",
+                    "sender": "0"
+                }
+            ]
+        }
+```
 - [ ] Provide a web ui to display transactions
