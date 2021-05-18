@@ -113,4 +113,19 @@ I want to be putting the following in to the db from `http://localhost:5000/chai
             ]
         }
 ```
+
+- [ ] Convert the unix timpstamp
+
+Doing it like this will allow me to place `date` as a column and `time` as one.
+
+```python
+import datetime
+
+timestamp = datetime.datetime.fromtimestamp(1621352461.6053782)
+
+date = timestamp.strftime("%Y-%m-%d")
+time = timestamp.strftime("%H:%M:%S")
+
+print(f"Block was mined on {date} at {time}")
+```
 - [ ] Provide a web ui to display transactions
