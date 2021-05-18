@@ -123,9 +123,19 @@ import datetime
 
 timestamp = datetime.datetime.fromtimestamp(1621352461.6053782)
 
-date = timestamp.strftime("%Y-%m-%d")
-time = timestamp.strftime("%H:%M:%S")
+ts = timestamp.strftime("%Y-%m-%d, %H:%M:%S")
 
-print(f"Block was mined on {date} at {time}")
+print(f"Block was mined on {ts}")
+```
+
+Thinking my table could be like this:
+```sql
+-- id | block_number | miner | ts_mined 
+CREATE TABLE mined_blocks (
+    transaction_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    block_number INTEGER NOT NULL,
+    miner VARCHAR(255),
+    ts_mined VARCHAR(255)
+)
 ```
 - [ ] Provide a web ui to display transactions
