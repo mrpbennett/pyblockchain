@@ -130,12 +130,14 @@ print(f"Block was mined on {ts}")
 
 Thinking my table could be like this:
 ```sql
--- id | block_number | miner | ts_mined 
-CREATE TABLE mined_blocks (
+-- id | block_number | miner | ts | date | time
+CREATE TABLE mined_blocks(
     transaction_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    block_number INTEGER NOT NULL,
-    miner VARCHAR(255),
-    ts_mined VARCHAR(255)
+    block_number   INTEGER NOT NULL,
+    miner          VARCHAR(255),
+    ts             VARCHAR(255),
+    date           VARCHAR(255),
+    time           VARCHAR(255)
 )
 ```
 - [ ] Provide a web ui to display transactions
